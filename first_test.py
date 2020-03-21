@@ -23,12 +23,19 @@ def my_sum(list_of_numbers):
     
     """
     pass
-
+    # неправильный вариант
     k = 0
     for i in range(0, len(list_of_numbers)):
-        k = k + list_of_numbers[i]
+        k += list_of_numbers[i]
     return k
-
+    #правильный вариант
+#     k = 0
+#     for i in list_of_numbers:
+#         k += i
+#     return k
+#
+# l = [1,100,3]
+# print(my_sum(l))
 
 def shortener(string):
     """
@@ -48,13 +55,15 @@ def shortener(string):
     """
     pass
     string1 = string.split()
-    string2 =[]
+    string2 = []
     for i in string1:
+        string2.append(i)
         if len(i) > 6:
+            string2.remove(i)
             i = i[:6]+'*'
             string2.append(i)
-        else:
-            string2.append(i)
+        # else:
+        #     string2.append(i)
 
     return ' '.join(string2)
 
@@ -78,10 +87,10 @@ def compare_ends(words):
     #  ...wite your code here
     k = 0
     for i in words:
-        if len(i) > 1 and i[0] == i[len(i)-1]:
-            k +=1
+        if len(i) > 1 and i[0] == i[-1]:
+            k += 1
     return k
 
-#words = ['Abba ra', 'dfg', 'kfd k','a', 'ad', 'aaaaa gfgfgfg aaa']
-#print(compare_ends(words))
+# words = ['Abba ra', 'dfg', 'kfd k','a', 'ad', 'aaaaa gfgfgfg aaa']
+# print(compare_ends(words))
 
